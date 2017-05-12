@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AccordionModule } from 'primeng/primeng';
-import { MenuItem, MenubarModule, ButtonModule, InputTextModule, CalendarModule } from 'primeng/primeng';
+import { MenuItem, MenubarModule, ButtonModule, InputTextModule, CalendarModule, PanelModule, DropdownModule } from 'primeng/primeng';
 
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
@@ -17,6 +17,8 @@ import { AboutComponent } from './about/about.component';
 import { MenSeniorComponent } from './men-senior/men-senior.component';
 import { MenSeniorDetailComponent } from './men-senior-detail/men-senior-detail.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { SortAppsPipe } from './sort-apps.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -32,7 +34,9 @@ export const firebaseConfig = {
     AboutComponent,
     MenSeniorComponent,
     MenSeniorDetailComponent,
-    AdminComponent
+    AdminComponent,
+    EditPlayerComponent,
+    SortAppsPipe
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,8 @@ export const firebaseConfig = {
     MenubarModule,
     InputTextModule,
     CalendarModule,
+    PanelModule,
+    DropdownModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],

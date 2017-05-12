@@ -25,7 +25,21 @@ export class MenSeniorDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
        this.playerId = urlParameters['id'];
      });
-     this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
+     this.playerService.getPlayerById(this.playerId).subscribe(recentData => {
+       this.playerToDisplay = new Player(
+                                          recentData.name,
+                                          recentData.dob,
+                                          recentData.club,
+                                          recentData.salary,
+                                          recentData.position,
+                                          recentData.apps,
+                                          recentData.goals,
+                                          recentData.assists,
+                                          recentData.lastApp,
+                                          recentData.image
+       )
+     })
+    //  this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }
 
 }

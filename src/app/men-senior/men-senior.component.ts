@@ -12,7 +12,8 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class MenSeniorComponent implements OnInit {
   players: FirebaseListObservable<any[]>;
-
+  currentRoute: string = this.router.url;
+  filterByApps: string = "all";
 
   constructor(private router: Router, private playerService: PlayerService){}
 
@@ -21,7 +22,11 @@ export class MenSeniorComponent implements OnInit {
   }
 
   goToMSPlayerPage(clickedPlayer) {
-    this.router.navigate(['albums', clickedPlayer.$key]);
+    this.router.navigate(['men-seniors', clickedPlayer.$key]);
+  }
+
+  onChange(selectedApps) {
+    this.filterByApps = selectedApps;
   }
 
 

@@ -1,21 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { Player } from '../player.model';
+import { Component, Input, OnInit } from '@angular/core';
 import { PlayerService } from '../player.service';
 import { SelectItem } from 'primeng/primeng';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css'],
+  selector: 'app-edit-player',
+  templateUrl: './edit-player.component.html',
+  styleUrls: ['./edit-player.component.css'],
   providers: [PlayerService]
 })
-export class AdminComponent implements OnInit {
+export class EditPlayerComponent implements OnInit {
+  @Input() selectedPlayer;
   positions: SelectItem[];
   selectedCity: string;
 
   constructor(private playerService: PlayerService) {
     this.positions = [];
-    this.positions.push({label:'Select Position', value:null});
     this.positions.push({label:'Keeper', value:'Keeper'});
     this.positions.push({label:'Center Back', value:'Center Back'});
     this.positions.push({label:'Full Back', value:'Full Back'});
@@ -27,10 +26,14 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitAddPlayer(name: string, dob: any, club: string, salary: string, position: string, apps: number, goals: number, assists: number, lastApp: string, image: string) {
-    console.log(dob);
-    var newPlayer: Player = new Player(name, dob, club, salary, position, apps, goals, assists, lastApp, image);
-    this.playerService.addPlayer(newPlayer);
+  updatePlayer(playerToUpdate) {
+    this.playerService.updatePlayer(playerToUpdate);
+  }
+
+  deletePlayer(playerToDelete){
+    if(confirm("Are you sure you want to delete this player?")){
+      this.playerService.deletePlayer(playerToDelete);
+    }
   }
 
 }

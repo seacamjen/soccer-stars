@@ -1,0 +1,44 @@
+<div class="container">
+  <h3 class="first">Name</h3>
+  <input type="text" size="30" pInputText [(ngModel)]="selectedPlayer.name">
+
+  <h3 class="first">Birth Date</h3>
+  <input [(ngModel)]="selectedPlayer.dob" type="text" size="30" pInputText>
+
+  <h3 class="first">Club</h3>
+  <input [(ngModel)]="selectedPlayer.club" type="text" size="30" pInputText>
+
+  <h3 class="first">Salary</h3>
+  <input [(ngModel)]="selectedPlayer.salary" type="text" size="30" pInputText>
+
+  <h3 class="first">Position(s)</h3>
+  <p-dropdown [options]="positions" [(ngModel)]="selectedPlayer.position"></p-dropdown>
+
+  <h3 class="first">apps</h3>
+  <input [(ngModel)]="selectedPlayer.apps" type="number" size="30" pInputText>
+
+  <h3 class="first">Goals</h3>
+  <input [(ngModel)]="selectedPlayer.goals" type="number" size="30" pInputText>
+
+  <h3 class="first">Assists</h3>
+  <input [(ngModel)]="selectedPlayer.assists" type="number" size="30" pInputText>
+
+  <h3 class="first">Last App</h3>
+  <input [(ngModel)]="selectedPlayer.lastApp" type="text" size="30" pInputText>
+
+  <h3 class="first">Profile Image</h3>
+  <input [(ngModel)]="selectedPlayer.image" type="text" size="30" pInputText>
+
+  <br>
+
+  <button pButton type="button" label="Update Player" class="ui-button-success" (click)="updatePlayer(selectedPlayer)"></button>
+
+  <br>
+
+  <button pButton type="button" label="Delete Player" class="ui-button-success" (click)="deletePlayer(selectedPlayer)"></button>
+
+</div>
+
+
+<br><br><br><br>
+<hr>
