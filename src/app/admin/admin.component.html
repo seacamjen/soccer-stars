@@ -1,0 +1,38 @@
+<div class="container">
+  <h3 class="first">Name</h3>
+  <input #newName type="text" size="30" pInputText>
+
+  <h3>Birth Date</h3>
+  <p-calendar #newDob [monthNavigator]="true" [yearNavigator]="true" yearRange="1965:2010"></p-calendar> {{date6|date}}
+
+  <h3 class="first">Club</h3>
+  <input #newClub type="text" size="30" pInputText>
+
+  <h3 class="first">Salary</h3>
+  <input #newSalary type="text" size="30" pInputText>
+
+  <h3 class="first">Position(s)</h3>
+  <input #newPosition type="text" size="30" pInputText>
+
+  <h3 class="first">apps</h3>
+  <input #newApps type="number" size="30" pInputText>
+
+  <h3 class="first">Goals</h3>
+  <input #newGoals type="number" size="30" pInputText>
+
+  <h3 class="first">Assists</h3>
+  <input #newAssists type="number" size="30" pInputText>
+
+  <h3 class="first">Last App</h3>
+  <input #newLastApp type="text" size="30" pInputText>
+
+  <h3 class="first">Profile Image</h3>
+  <input #newImage type="text" size="30" pInputText>
+
+  <button pButton type="button" label="Add Player" class="ui-button-success" (click)="submitAddPlayer(newName.value, newDob.value, newClub.value, newSalary.value, newPosition.value, newApps.value, newGoals.value, newAssists.value, newLastApp.value, newImage.value); newName.value=''; newDob.value=''; newClub.value=''; newSalary.value=''; newPosition.value=''; newApps.value=''; newGoals.value=''; newAssists.value=''; newLastApp.value=''; newImage.value=''"></button>
+
+</div>
+
+
+<br><br><br><br>
+<hr>

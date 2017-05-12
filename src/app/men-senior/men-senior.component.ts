@@ -17,11 +17,11 @@ export class MenSeniorComponent implements OnInit {
   constructor(private router: Router, private playerService: PlayerService){}
 
   ngOnInit() {
-    // this.players = this.playerService.getPlayers();
+    this.players = this.playerService.getPlayers();
   }
 
-  goToMSPlayerPage(clickedPlayer: Player) {
-    // this.router.navigate(['players', clickedPlayer.id]);
+  goToMSPlayerPage(clickedPlayer) {
+    this.router.navigate(['albums', clickedPlayer.$key]);
   }
 
 

@@ -4,6 +4,7 @@ import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
 import { MenSeniorComponent } from './men-senior/men-senior.component';
 import { MenSeniorDetailComponent } from './men-senior-detail/men-senior-detail.component';
+import { AdminComponent }   from './admin/admin.component';
 
 const appRoutes: Routes = [
   {
@@ -21,6 +22,10 @@ const appRoutes: Routes = [
   {
     path: 'men-seniors/:id',
     component: MenSeniorDetailComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   }
 ];
 

@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Player } from '../player.model';
 import { PlayerService } from '../player.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-men-senior-detail',
@@ -11,7 +12,7 @@ import { PlayerService } from '../player.service';
   providers: [PlayerService]
 })
 export class MenSeniorDetailComponent implements OnInit {
-  playerId;
+  playerId: string;
   playerToDisplay;
 
   constructor(
@@ -21,9 +22,10 @@ export class MenSeniorDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  //   this.route.params.forEach((urlParameters) => {
-  //    this.albumId = parseInt(urlParameters['id']);
-  //  });
+    this.route.params.forEach((urlParameters) => {
+       this.playerId = urlParameters['id'];
+     });
+     this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }
 
 }
