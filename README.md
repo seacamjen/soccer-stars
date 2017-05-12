@@ -1,17 +1,43 @@
-##Planning
-  1. Components:
-    - Teams, Team/players (Multiple Teams), About, Player Details
-
-  2. Pipe:
-    - Sort by Age, Sort by games played, sort by last time played
-
-  3. service
-    - model for player: constructor(name, dob, club, salary, apps, goals, assists, last app, positions)
-
+[![Code Climate](https://codeclimate.com/github/seacamjen/soccer-stars/badges/gpa.svg)](https://codeclimate.com/github/seacamjen/soccer-stars)
 
 # SoccerStars
 
+May 12, 2017
+
+This is your one stop to see all the players that are currently recently on the US Soccer team rosters. You can see stats such as their number of games played, goals, assists and current club. You can sort to see the list of players by the number of apps(games played). Each player also has their own detail page.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+
+**By Cameron Jensen**
+
+## Configuration / Dependancies
+  * One model: Players
+  * Model is defined in player.model.ts
+  * Player includes 10 attributes: name, date of birth, club, position, apps, goals, assists, salary, last app, image.
+
+## Specs
+  1. Behavior: Add New Player
+    * Input: Messi, March 2,1988, Barcalona, Forward, 75, 55, 34, 10,000,000, June 7, 2016, http://messiimage.com
+    * Ouput:"Messi, March 2,1988, Barcalona, Forward, 75, 55, 34, 10,000,000, June 7, 2016, http://messiimage.com" saved to database
+  2. Behavior: View All Players
+    * Input: Load Page
+    * Ouput: All Players are shown
+  3. Behavior: Sort View by Apps
+    * Input: Select More than 100
+    * Ouput: Players with more than 100 apps are shown
+  4. Behavior: Update New Player
+    * Input: Messi, March 2,1988, Barcalona, Wing(Forward), 75, 55, 36(34), 10,000,000, June 7, 2016, http://messiimage.com
+    * Ouput:"Messi, March 2,1988, Barcalona, Wing, 75, 55, 36, 10,000,000, June 7, 2016, http://messiimage.com" saved to database
+  5. Behavior: Delete Player
+    * Input: Delete button clicked for player
+    * Ouput: Player is removed from database
+  6. Behavior: Set up Firebase as database
+    * Input: Firebase apikeys set up for database
+    * Ouput: Firebase used as database.
+
+## Integration
+  * Statice page for Teams and About
+  * Dynamic routing set up for Teams players to player profile
 
 ## Development server
 
@@ -37,3 +63,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## License
+
+Copyright (c) 2017 **MIT License**
