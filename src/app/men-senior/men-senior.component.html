@@ -1,4 +1,4 @@
-<h2>Mens Senior Team</h2>
+<h2 class="center">Mens Senior Team</h2>
 
 <select (change)="onChange($event.target.value)">
   <option value="all" selected="selected">All Players</option>
@@ -7,16 +7,29 @@
   <option value="advanced">between 56 and 99</option>
   <option value="expert">more than 100</option>
 </select>
+<br><br>
 
 <div *ngFor="let player of players | async | sortApps:filterByApps">
-  <img src={{player.image}} alt="Picture of player">
-  <h3 (click)="goToMSPlayerPage(player)">{{player.name}}</h3>
-  <div *ngIf="currentRoute === '/admin'">
-    {{player.salary}}
-    <hr>
-    <app-edit-player [selectedPlayer]="player"></app-edit-player>
-  </div>
+
+
+  <p-fieldset>
+      <p-header (click)="goToMSPlayerPage(player)">
+        {{player.name}}
+        <button pButton class="pull-right" type="button" icon="fa-edit" iconPos="left"></button>
+      </p-header>
+      <img src={{player.image}} alt="Picture of player">
+    <div *ngIf="currentRoute === '/admin'">
+      {{player.salary}}
+
+      <hr>
+      <div *ngIf="">
+        <app-edit-player [selectedPlayer]="player"></app-edit-player>
+      </div>
+    </div>
+  </p-fieldset>
 </div>
+
+
 
 
 

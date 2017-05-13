@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AccordionModule } from 'primeng/primeng';
-import { MenuItem, MenubarModule, ButtonModule, InputTextModule, CalendarModule, PanelModule, DropdownModule } from 'primeng/primeng';
+import { MenuItem, MenubarModule, ButtonModule, InputTextModule, CalendarModule, PanelModule, DropdownModule, FieldsetModule } from 'primeng/primeng';
 
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
@@ -49,6 +49,7 @@ export const firebaseConfig = {
     InputTextModule,
     CalendarModule,
     PanelModule,
+    FieldsetModule,
     DropdownModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
