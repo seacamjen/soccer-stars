@@ -12,6 +12,7 @@ import { SelectItem } from 'primeng/primeng';
 export class AdminComponent implements OnInit {
   positions: SelectItem[];
   selectedCity: string;
+  display: boolean = false;
 
   constructor(private playerService: PlayerService) {
     this.positions = [];
@@ -25,6 +26,10 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  showDialog() {
+    this.display = true;
   }
 
   submitAddPlayer(name: string, dob: any, club: string, salary: string, position: string, apps: number, goals: number, assists: number, lastApp: string, image: string) {

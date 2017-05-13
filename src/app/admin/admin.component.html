@@ -1,45 +1,48 @@
-<h3 class="center">New Player</h3>
-<div class="ui-g">
-  <div class="ui-g-4">
-    <h3 class="first">Name</h3>
-    <input #newName type="text" size="30" pInputText>
+<p-dialog header="Title" [(visible)]="display">
+  <h3 class="center">New Player</h3>
+  <div class="ui-g">
+    <div class="ui-g-4">
+      <h3 class="first">Name</h3>
+      <input #newName type="text" size="30" pInputText>
 
-    <h3>Birth Date</h3>
-    <input #newDob type="text" size="30" pInputText>
+      <h3>Birth Date</h3>
+      <input #newDob type="text" size="30" pInputText>
 
-    <h3 class="first">Club</h3>
-    <input #newClub type="text" size="30" pInputText>
+      <h3 class="first">Club</h3>
+      <input #newClub type="text" size="30" pInputText>
 
+    </div>
+    <div class="ui-g-4">
+      <h3 class="first">Position</h3>
+      <p-dropdown #newPosition [options]="positions"></p-dropdown>
+
+      <h3 class="first">Apps</h3>
+      <input #newApps type="number" size="30" pInputText>
+
+      <h3 class="first">Goals</h3>
+      <input #newGoals type="number" size="30" pInputText>
+
+      <h3 class="first">Assists</h3>
+      <input #newAssists type="number" size="30" pInputText>
+    </div>
+    <div class="ui-g-4">
+      <h3 class="first">Last App</h3>
+      <input #newLastApp type="text" size="30" pInputText>
+
+      <h3 class="first">Profile Image</h3>
+      <input #newImage type="text" size="30" pInputText>
+
+      <h3 class="first">Salary</h3>
+      <input #newSalary type="text" size="30" pInputText>
+    </div>
+
+    <button pButton type="button" label="Add Player" class="ui-button-success" (click)="submitAddPlayer(newName.value, newDob.value, newClub.value, newSalary.value, newPosition.value, newApps.value, newGoals.value, newAssists.value, newLastApp.value, newImage.value); newName.value=''; newDob.value=''; newClub.value=''; newSalary.value=''; newPosition.value=''; newApps.value=''; newGoals.value=''; newAssists.value=''; newLastApp.value=''; newImage.value=''"></button>
   </div>
-  <div class="ui-g-4">
-    <h3 class="first">Position</h3>
-    <p-dropdown #newPosition [options]="positions"></p-dropdown>
+</p-dialog>
 
-    <h3 class="first">Apps</h3>
-    <input #newApps type="number" size="30" pInputText>
-
-    <h3 class="first">Goals</h3>
-    <input #newGoals type="number" size="30" pInputText>
-
-    <h3 class="first">Assists</h3>
-    <input #newAssists type="number" size="30" pInputText>
-  </div>
-  <div class="ui-g-4">
-    <h3 class="first">Last App</h3>
-    <input #newLastApp type="text" size="30" pInputText>
-
-    <h3 class="first">Profile Image</h3>
-    <input #newImage type="text" size="30" pInputText>
-
-    <h3 class="first">Salary</h3>
-    <input #newSalary type="text" size="30" pInputText>
-  </div>
+<button type="text" (click)="showDialog()" pButton icon="fa-plus-circle" label="Add Player"></button>
 
 
-
-  <button pButton type="button" label="Add Player" class="ui-button-success" (click)="submitAddPlayer(newName.value, newDob.value, newClub.value, newSalary.value, newPosition.value, newApps.value, newGoals.value, newAssists.value, newLastApp.value, newImage.value); newName.value=''; newDob.value=''; newClub.value=''; newSalary.value=''; newPosition.value=''; newApps.value=''; newGoals.value=''; newAssists.value=''; newLastApp.value=''; newImage.value=''"></button>
-
-</div>
 
 <div>
   <app-men-senior></app-men-senior>
