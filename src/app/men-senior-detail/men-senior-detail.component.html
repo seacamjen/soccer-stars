@@ -1,5 +1,25 @@
-<p>
-  {{playerToDisplay?.name}}
-  {{playerToDisplay?.dob}}
-  {{playerToDisplay?.position}}
-</p>
+
+<p-panel header={{playerToDisplay?.name}}>
+<div class="ui-g">
+  <div class="ui-g-5">
+    <h3>
+      <strong>Birthdate:</strong> {{playerToDisplay?.dob}}<br>
+      <strong>Current Club:</strong> {{playerToDisplay?.club}}<br>
+      <strong>Position:</strong> {{playerToDisplay?.position}}<br>
+      <strong>Salary:</strong> $ {{playerToDisplay?.salary}}<br>
+      <hr>
+      <strong>Apps:</strong> {{playerToDisplay?.apps}}<br>
+      <strong>Goals:</strong> {{playerToDisplay?.goals}}<br>
+      <strong>Assists:</strong> {{playerToDisplay?.assists}}<br>
+      <strong>Last Game:</strong> {{playerToDisplay?.lastApp}}<br>
+    </h3>
+  </div>
+  <div class="ui-g-6">
+    <img src={{playerToDisplay?.image}} alt="Profile picture of Player">
+  </div>
+</div>
+</p-panel>
+
+
+<br><br><br>
+<hr>

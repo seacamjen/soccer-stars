@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { PlayerService } from '../player.service';
 import { SelectItem } from 'primeng/primeng';
 
@@ -10,6 +10,7 @@ import { SelectItem } from 'primeng/primeng';
 })
 export class EditPlayerComponent implements OnInit {
   @Input() selectedPlayer;
+  @Output() changeEdit = new EventEmitter;
   positions: SelectItem[];
   selectedCity: string;
 
@@ -28,6 +29,7 @@ export class EditPlayerComponent implements OnInit {
 
   updatePlayer(playerToUpdate) {
     this.playerService.updatePlayer(playerToUpdate);
+    this.changeEdit.emit();
   }
 
   deletePlayer(playerToDelete){

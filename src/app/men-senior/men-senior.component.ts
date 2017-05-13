@@ -14,6 +14,7 @@ export class MenSeniorComponent implements OnInit {
   players: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
   filterByApps: string = "all";
+  edit = false;
 
   constructor(private router: Router, private playerService: PlayerService){}
 
@@ -27,6 +28,14 @@ export class MenSeniorComponent implements OnInit {
 
   onChange(selectedApps) {
     this.filterByApps = selectedApps;
+  }
+
+  editStatusChange(){
+    this.edit = true;
+  }
+
+  editStatusToFalse() {
+    this.edit = false;
   }
 
 

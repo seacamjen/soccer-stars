@@ -10,23 +10,32 @@
 <br><br>
 
 <div *ngFor="let player of players | async | sortApps:filterByApps">
-
-
   <p-fieldset>
       <p-header (click)="goToMSPlayerPage(player)">
         {{player.name}}
-        <button pButton class="pull-right" type="button" icon="fa-edit" iconPos="left"></button>
       </p-header>
-      <img src={{player.image}} alt="Picture of player">
+      <div class="ui-g">
+        <div class="ui-g-6">
+          <img src={{player.image}} alt="Picture of player">
+        </div>
+        <div class="ui-g-6">
+          <h2>
+            Club: {{player.club}}
+            <br>
+            Apps: {{player.apps}}
+          </h2>
+        </div>
+      </div>
     <div *ngIf="currentRoute === '/admin'">
-      {{player.salary}}
-
+      Salary: $ {{player.salary}}
+        <button pButton class="pull-right" type="button" icon="fa-edit" iconPos="left" (click)="editStatusChange()"></button>
       <hr>
-      <div *ngIf="">
-        <app-edit-player [selectedPlayer]="player"></app-edit-player>
+      <div *ngIf="edit === true">
+        <app-edit-player [selectedPlayer]="player" (changeEdit)="editStatusToFalse()"></app-edit-player>
       </div>
     </div>
   </p-fieldset>
+  <br>
 </div>
 
 
