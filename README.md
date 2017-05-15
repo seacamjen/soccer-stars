@@ -15,6 +15,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   * Model is defined in player.model.ts
   * Player includes 10 attributes: name, date of birth, club, position, apps, goals, assists, salary, last app, image.
 
+## ApiKeys
+  * create an api-keys.ts file within the soccer-stars/src/app directory.
+  * connect this with firebase and obtain a connect to a database.
+  * include on this file:
+        export var masterFirebaseConfig = {
+          apiKey: "xxxxxxxxxxxxx",
+          authDomain: "xxxxxxx",
+          databaseURL: "xxxxxxxxx",
+          storageBucket: "xxxxxx",
+          messagingSenderId: "xxxxxxx"
+          };
+
 ## Specs
   1. Behavior: Add New Player
     * Input: Messi, March 2,1988, Barcalona, Forward, 75, 55, 34, 10,000,000, June 7, 2016, http://messiimage.com
